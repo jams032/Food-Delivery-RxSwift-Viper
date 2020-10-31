@@ -1,4 +1,4 @@
-# Swift Viper Weather App
+# Swift Viper Food Delivery App
 
 This is an example project to demonstrate:
 * [VIPER](https://github.com/strongself/The-Book-of-VIPER) architecture
@@ -8,7 +8,7 @@ This is an example project to demonstrate:
 * [Realm](https://github.com/realm/realm-cocoa)
 * [RxSwift](https://github.com/ReactiveX/RxSwift)
 
-in a simple weather app that lists current weather information at some locations.
+in a simple Food Delivery app that lists current Food Delivery information at some locations.
 
 ![Screenshot](Assets/SwinjectSimpleExampleScreenshot.png)
 
@@ -21,8 +21,8 @@ in a simple weather app that lists current weather information at some locations
 
 1. Download the source code or clone the repository.
 2. Run `bundle install && bundle exec pod install`.
-3. Get a free API key from [OpenWeatherMap](http://openweathermap.org).
-4. Open `OpenWeatherAPI.swift` and fill `apiKey = ""` with your own API key.
+3. Get a free API key from [OpenFoodMap](http://openweathermap.org). // currently weather 
+4. Open `OpenFoodAPI.swift` and fill `apiKey = ""` with your own API key.
 
 ## TODO
 * ~~Swift 4~~
