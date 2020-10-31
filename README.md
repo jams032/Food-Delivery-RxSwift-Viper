@@ -14,7 +14,7 @@ in a simple Food Delivery app that lists current Food Delivery information at so
 
 ## Requirements
 
-- Xcode 8 or later with Swift 3.0.x
+- Xcode 11 or later with Swift 5.0.x
 - [CocoaPods](https://cocoapods.org) 1.1.0 or later
 
 ## Setup
@@ -25,12 +25,7 @@ in a simple Food Delivery app that lists current Food Delivery information at so
 4. Open `OpenFoodAPI.swift` and fill `apiKey = ""` with your own API key.
 
 ## TODO
-* ~~Swift 4~~
-* ~~ViperMcFlurry or LightRoute v2~~
-* ~~Facades with RxSwift~~
-* ~~RxRealm~~
-* ~~Acknowledgements~~
-* ~~SwiftLint~~
+* ~~Implement Food API, model update~~
 
 ## License
 
