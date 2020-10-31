@@ -10,8 +10,6 @@ This is an example project to demonstrate:
 
 in a simple Food Delivery app that lists current Food Delivery information at some locations.
 
-![Screenshot](Assets/SwinjectSimpleExampleScreenshot.png)
-
 ## Requirements
 
 - Xcode 11 or later with Swift 5.0.x
