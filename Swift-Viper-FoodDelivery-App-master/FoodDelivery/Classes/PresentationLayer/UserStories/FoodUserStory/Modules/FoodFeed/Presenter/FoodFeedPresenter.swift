@@ -41,7 +41,7 @@ class FoodFeedPresenter: FoodFeedModuleInput, FoodFeedViewOutput, FoodFeedIntera
     }
 
     func didTapCity(_ city: CityPlainObject) {
-        router.openForecastModule(city)
+       // router.openForecastModule(city)
     }
 
     // MARK: - FoodFeedInteractorOutput

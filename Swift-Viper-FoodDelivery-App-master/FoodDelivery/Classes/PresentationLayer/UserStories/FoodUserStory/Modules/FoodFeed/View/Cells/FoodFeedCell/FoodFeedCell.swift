@@ -26,7 +26,7 @@ class FoodFeedCell: UITableViewCell {
         itemName?.text = cellObject.name
         description1?.text = cellObject.weather
         datelabel?.text = "10-10-2020"
-        addCardtutton.titleLabel?.text = "\(100+arc4random()%1000)"
+        addCardtutton.titleLabel?.text = "\(cellObject.price))"
         itemImageView.image = UIImage.init(named: "image1")
 
     }

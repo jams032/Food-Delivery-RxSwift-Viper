@@ -79,7 +79,7 @@ class FoodFeedViewController: UIViewController, FoodFeedViewInput, UISearchBarDe
                 .subscribe(onNext: { [weak self] item in
                     self?.output.didTapCity(item.city)
                     if let index = self?.tableView.indexPathForSelectedRow {
-                        self?.tableView.deselectRow(at: index, animated: true)
+                      //  self?.tableView.deselectRow(at: index, animated: true)
                     }
                 })
                 .disposed(by: disposeBag)

@@ -9,5 +9,6 @@ struct FoodFeedCellObject {
     let id: Int
     let name: String
     let weather: String
+    let price = 10 + arc4random()%100
     let city: CityPlainObject
 }
