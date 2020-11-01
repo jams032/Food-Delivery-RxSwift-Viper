@@ -1,4 +1,4 @@
-# Swift Viper Food Delivery App
+# Swift Viper Food Delivery App (ongoing..)
 
 This is an example project to demonstrate:
 * [VIPER](https://github.com/strongself/The-Book-of-VIPER) architecture
