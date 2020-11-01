@@ -22,7 +22,6 @@ class FoodNetworkService: FoodNetworkServiceType {
         2147714, 264371, 1816670, 2643743, 3451190, 1850147
     ]
 
-//    let provider = MoyaProvider<OpenWeatherAPI>(plugins: [NetworkLoggerPlugin(verbose: true)])
     let provider = MoyaProvider<OpenFoodAPI>(plugins: [NetworkLoggerPlugin()])
 
     func cities() -> Observable<[CityPlainObject]> {
