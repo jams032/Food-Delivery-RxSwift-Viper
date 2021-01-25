@@ -10,5 +10,5 @@ import Foundation
 
 protocol FoodOrderInteractorInput {
 
-    func obtainForecast(_ city: CityPlainObject)
+    func obtainForecast(_ city: FoodModelObject)
 }

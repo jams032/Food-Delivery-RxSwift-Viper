@@ -9,22 +9,22 @@ import RxSwift
 
 public protocol FoodRepositoryServiceType {
 
-    func cities() -> Observable<[CityPlainObject]>
+    func cities() -> Observable<[FoodModelObject]>
 
-    func saveCities(_ cities: [CityPlainObject]) -> Observable<[CityPlainObject]>
+    func saveCities(_ cities: [FoodModelObject]) -> Observable<[FoodModelObject]>
 }
 
 class FoodRepositoryService: FoodRepositoryServiceType {
 
-    func cities() -> Observable<[CityPlainObject]> {
-        guard let repository = try? RealmRepository<CityModelObject>() else {
+    func cities() -> Observable<[FoodModelObject]> {
+        guard let repository = try? RealmRepository<FoodModelObject>() else {
             return Observable.error(RealmRepositoryError.createError)
         }
         return repository.fetchAll()
     }
 
-    func saveCities(_ cities: [CityPlainObject]) -> Observable<[CityPlainObject]> {
-        guard let repository = try? RealmRepository<CityModelObject>() else {
+    func saveCities(_ cities: [FoodModelObject]) -> Observable<[FoodModelObject]> {
+        guard let repository = try? RealmRepository<FoodModelObject>() else {
             return Observable.error(RealmRepositoryError.createError)
         }
         return repository.save(items: cities)

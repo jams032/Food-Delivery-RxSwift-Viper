@@ -8,11 +8,11 @@ import RxSwift
 
 public protocol FoodFecadeType {
 
-    func cities() -> Observable<[CityPlainObject]>
+    func cities() -> Observable<[FoodModelObject]>
 
-    func forecasts(_ city: CityPlainObject) -> Observable<[ForecastPlainObject]>
-
-    func filterCities(_ searchString: String, _ cities: [CityPlainObject]) -> [CityPlainObject]
+//    func forecasts(_ city: FoodModelObject) -> Observable<[OrderPlainObject]>
+//
+//    func filterCities(_ searchString: String, _ cities: [FoodModelObject]) -> [FoodModelObject]
 }
 
 class FoodFecade: FoodFecadeType {
@@ -31,12 +31,12 @@ class FoodFecade: FoodFecadeType {
         self.foodRepositoryService = foodRepositoryService
     }
 
-    func cities() -> Observable<[CityPlainObject]> {
+    func cities() -> Observable<[FoodModelObject]> {
         let networkCities = foodNetworkService.cities()
                 .flatMap(foodRepositoryService.saveCities)
 
         return foodRepositoryService.cities()
-                .flatMap { cities -> Observable<[CityPlainObject]> in
+                .flatMap { cities -> Observable<[FoodModelObject]> in
                     guard !cities.isEmpty else {
                         return networkCities
                     }
@@ -44,11 +44,11 @@ class FoodFecade: FoodFecadeType {
                 }
     }
 
-    func forecasts(_ city: CityPlainObject) -> Observable<[ForecastPlainObject]> {
-        return foodNetworkService.forecasts(city)
-    }
-
-    func filterCities(_ searchString: String, _ cities: [CityPlainObject]) -> [CityPlainObject] {
-        return foodService.filterCities(searchString, cities)
-    }
+//    func forecasts(_ city: FoodModelObject) -> Observable<[OrderPlainObject]> {
+//        return foodNetworkService.forecasts(city)
+//    }
+//
+//    func filterCities(_ searchString: String, _ cities: [FoodModelObject]) -> [FoodModelObject] {
+//        return foodService.filterCities(searchString, cities)
+//    }
 }

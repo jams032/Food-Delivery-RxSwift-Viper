@@ -16,7 +16,7 @@ class FoodOrderInteractor: FoodOrderInteractorInput {
 
     // MARK: - FoodOrderInteractorInput
 
-    func obtainForecast(_ city: CityPlainObject) {
+    func obtainForecast(_ city: FoodModelObject) {
         foodFecade.forecasts(city)
                 .observeOn(MainScheduler.instance)
                 .subscribe(onNext: { [weak self] forecast in

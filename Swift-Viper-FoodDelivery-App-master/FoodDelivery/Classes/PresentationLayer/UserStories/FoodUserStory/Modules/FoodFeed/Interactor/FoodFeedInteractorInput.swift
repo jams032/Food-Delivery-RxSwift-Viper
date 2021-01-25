@@ -12,7 +12,7 @@ protocol FoodFeedInteractorInput {
 
     func obtainCities()
 
-    func filterCities(_ searchString: String, _ cities: [CityPlainObject]) -> [CityPlainObject]
+    func filterCities(_ searchString: String, _ cities: [FoodPlainObject]) -> [FoodPlainObject]
 
     func startTimer()
 

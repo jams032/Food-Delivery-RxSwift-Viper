@@ -6,9 +6,13 @@
 import Foundation
 import Moya
 
+// https://developer.edamam.com/admin
+// https://order-pizza-api.herokuapp.com/api/ui/?ref=apilist.fun#!/Orders/orders_read_all
+// https://order-pizza-api.herokuapp.com/api/orders
+
 public enum OpenFoodAPI {
-    static let apiKey = "ee4096f5d1aef5b2a6bd7b46209b75b7"
-    case cities([Int])
+    static let apiKey = "" // ee4096f5d1aef5b2a6bd7b46209b75b7"
+    case cities
     case forecast(Int)
 }
 
@@ -19,14 +23,14 @@ extension OpenFoodAPI: TargetType {
     }
 
     public var baseURL: URL {
-        assert(!OpenFoodAPI.apiKey.isEmpty)
-        return URL(string: "http://api.openweathermap.org/data/2.5")!
+        //assert(!OpenFoodAPI.apiKey.isEmpty)
+        return URL(string: "https://order-pizza-api.herokuapp.com/api/orders")!
     }
 
     public var path: String {
         switch self {
         case .cities:
-            return "/group"
+            return ""
         case .forecast:
             return "/forecast"
         }
@@ -38,20 +42,18 @@ extension OpenFoodAPI: TargetType {
 
     public var task: Task {
         switch self {
-        case .cities(let cityIds):
+        case .cities:
             let params = [
-                "APPID": OpenFoodAPI.apiKey,
-                "id": cityIds.map {
-                    String($0)
-                }.joined(separator: ",")
+                "": ""
             ]
-            return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
+           // return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
+            return .requestPlain
         case .forecast(let cityId):
-            let params: [String: Any] = [
-                "id": cityId,
-                "APPID": OpenFoodAPI.apiKey
-            ]
-            return .requestParameters(parameters: params, encoding: URLEncoding.queryString)
+//            let params: [String: Any] = [
+//                "id": cityId,
+//                "APPID": OpenFoodAPI.apiKey
+//            ]
+            return .requestPlain // requestParameters(parameters: params, encoding: URLEncoding.queryString)
         }
     }
 

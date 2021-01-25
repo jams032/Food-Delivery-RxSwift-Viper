@@ -11,7 +11,7 @@ class FoodFeedPresenter: FoodFeedModuleInput, FoodFeedViewOutput, FoodFeedIntera
     weak var view: FoodFeedViewInput!
     var interactor: FoodFeedInteractorInput!
     var router: FoodFeedRouterInput!
-    var cities: [CityPlainObject]!
+    var cities: [FoodModelObject]!
 
     // MARK: - FoodFeedViewOutput
 
@@ -40,7 +40,7 @@ class FoodFeedPresenter: FoodFeedModuleInput, FoodFeedViewOutput, FoodFeedIntera
         view.configureWithItems(items: buildItems(cities!))
     }
 
-    func didTapCity(_ city: CityPlainObject) {
+    func didTapCity(_ city: FoodModelObject) {
        // router.openForecastModule(city)
     }
 
@@ -50,14 +50,14 @@ class FoodFeedPresenter: FoodFeedModuleInput, FoodFeedViewOutput, FoodFeedIntera
         interactor.obtainCities()
     }
 
-    func didObtainCities(_ cities: [CityPlainObject]) {
+    func didObtainCities(_ cities: [FoodModelObject]) {
         self.cities = cities
         view.configureWithItems(items: buildItems(cities))
     }
 
     // MARK: - Private Methods
 
-    func buildItems(_ cities: [CityPlainObject]) -> [FoodFeedCellObject] {
+    func buildItems(_ cities: [FoodModelObject]) -> [FoodFeedCellObject] {
         var myArray = [FoodFeedCellObject]()
         cities.forEach { (city) in
             myArray.append(FoodFeedCellObject(id: city.id, name: city.name, weather: city.weather, city: city))

@@ -7,14 +7,14 @@ import Foundation
 
 public protocol FoodServiceType {
 
-    func filterCities(_ searchString: String, _ cities: [CityPlainObject]) -> [CityPlainObject]
+    func filterCities(_ searchString: String, _ cities: [FoodModelObject]) -> [FoodModelObject]
 
 }
 
 class FoodService: FoodServiceType {
-    func filterCities(_ searchString: String, _ cities: [CityPlainObject]) -> [CityPlainObject] {
-        return cities.filter({ (city: CityPlainObject) -> Bool in
-            return city.name.lowercased().range(of: searchString.lowercased()) != nil
+    func filterCities(_ searchString: String, _ cities: [FoodModelObject]) -> [FoodModelObject] {
+        return cities.filter({ (city: FoodModelObject) -> Bool in
+            return city.Flavor.lowercased().range(of: searchString.lowercased()) != nil
         })
     }
 }

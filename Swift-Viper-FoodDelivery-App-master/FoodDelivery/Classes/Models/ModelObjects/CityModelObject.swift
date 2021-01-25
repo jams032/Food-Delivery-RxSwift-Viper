@@ -6,28 +6,40 @@
 import Foundation
 import RealmSwift
 
-class CityModelObject: Object, RealmEntity {
+class FoodModelObject: Object, RealmEntity {
 
-    typealias EntityType = CityPlainObject
+    typealias EntityType = FoodModelObject
 
-    @objc dynamic var id = 0
-    @objc dynamic var name = ""
-    @objc dynamic var weather = ""
-    @objc dynamic var created = Date()
+//    @objc dynamic var id = 0
+//    @objc dynamic var name = ""
+//    @objc dynamic var weather = ""
+//    @objc dynamic var created = Date()
 
+    @objc dynamic var Order_ID = 0
+    @objc dynamic var Table_No = 0
+    @objc dynamic var Crust = ""
+    @objc dynamic var Flavor = ""
+    @objc dynamic var Size = ""
+    @objc dynamic var Timestamp = ""
+    
     convenience required init(entity: EntityType) {
         self.init()
-        self.id = entity.id
-        self.name = entity.name
-        self.weather = entity.weather
-        self.created = Date()
+        
+        self.Order_ID = entity.Order_ID
+        self.Table_No = entity.Table_No
+        self.Crust = entity.Crust
+        self.Size = entity.Size
+        self.Flavor = entity.Flavor
+        self.Timestamp = entity.Timestamp
+
+        
     }
 
-    var plainObject: CityPlainObject {
-        return CityPlainObject(id: id, name: name, weather: weather)
+    var plainObject: FoodModelObject {
+        return FoodModelObject //(Order_ID: Order_ID,Table_No: Table_No, Crust: Crust, Size: Size,Timestamp:Timestamp)
     }
 
     override class func primaryKey() -> String? {
-        return "id"
+        return "Order_ID"
     }
 }

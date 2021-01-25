@@ -33,7 +33,7 @@ class FoodFeedInteractor: FoodFeedInteractorInput, TimeoutServiceOutput {
                 .disposed(by: disposeBag)
     }
 
-    func filterCities(_ searchString: String, _ cities: [CityPlainObject]) -> [CityPlainObject] {
+    func filterCities(_ searchString: String, _ cities: [FoodPlainObject]) -> [FoodPlainObject] {
         return foodFecade.filterCities(searchString, cities)
     }
 

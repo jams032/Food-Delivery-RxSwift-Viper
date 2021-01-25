@@ -11,5 +11,5 @@ import Foundation
 protocol FoodFeedInteractorOutput: class {
     func didTriggerTimerOutput()
 
-    func didObtainCities(_ cities: [CityPlainObject])
+    func didObtainCities(_ cities: [FoodModelObject])
 }
